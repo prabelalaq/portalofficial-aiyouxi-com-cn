@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>爱游戏 · 稳定入口说明</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #f4f9fc;
+            color: #1b2b38;
+            line-height: 1.7;
+            padding: 1.5rem;
+        }
+
+        .page {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 2rem 1.8rem;
+            border-radius: 32px;
+            box-shadow: 0 12px 28px rgba(0, 50, 60, 0.06);
+            transition: all 0.2s;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            color: #0a3b47;
+            border-left: 6px solid #2a9d8f;
+            padding-left: 1rem;
+            margin-bottom: 0.5rem;
+            margin-top: 0.2rem;
+        }
+
+        .subhead {
+            font-size: 1rem;
+            color: #4e6b78;
+            margin-bottom: 2rem;
+            padding-left: 1.4rem;
+            border-left: 2px solid #b6d7d0;
+        }
+
+        .grid-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 2rem 0 1.8rem 0;
+        }
+
+        .card {
+            background: #f0f7fa;
+            border-radius: 24px;
+            padding: 1.5rem 1.2rem;
+            box-shadow: 0 2px 6px rgba(42, 157, 143, 0.08);
+            transition: transform 0.12s ease, box-shadow 0.12s;
+            border: 1px solid #ddecf0;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 18px rgba(42, 157, 143, 0.12);
+            border-color: #96c7bf;
+        }
+
+        .card h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1f5c5a;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: #2c4c54;
+        }
+
+        .dot-ornament {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: #2a9d8f;
+            border-radius: 10px;
+            margin-right: 6px;
+        }
+
+        .intro-text {
+            margin: 1.5rem 0 1.8rem 0;
+        }
+
+        .intro-text p {
+            margin-bottom: 1.2rem;
+            text-align: justify;
+        }
+
+        .insight-box {
+            background: #e4f3f0;
+            border-left: 5px solid #2a9d8f;
+            padding: 1.3rem 1.5rem;
+            border-radius: 20px;
+            margin: 1.8rem 0 2rem 0;
+            font-size: 1rem;
+            color: #0b3e3b;
+            font-weight: 400;
+            box-shadow: inset 0 1px 4px rgba(0,70,60,0.04);
+        }
+
+        .insight-box strong {
+            color: #0b554f;
+        }
+
+        .faq-mini {
+            background: #f7fbfc;
+            border-radius: 24px;
+            padding: 1.2rem 1.5rem;
+            margin: 2rem 0 1.4rem 0;
+            border: 1px solid #d2e7e3;
+        }
+
+        .faq-mini details {
+            margin-bottom: 0.5rem;
+        }
+
+        .faq-mini summary {
+            font-weight: 500;
+            cursor: pointer;
+            color: #18645e;
+            padding: 0.4rem 0;
+            font-size: 0.98rem;
+        }
+
+        .faq-mini summary::marker {
+            color: #2a9d8f;
+        }
+
+        .faq-mini p {
+            padding: 0.4rem 0 0.4rem 1.2rem;
+            color: #315e5b;
+            font-size: 0.95rem;
+        }
+
+        .link-sentence {
+            background: #edf6f4;
+            padding: 1.2rem 1.6rem;
+            border-radius: 40px;
+            text-align: center;
+            margin: 2rem 0 0.5rem 0;
+            font-size: 1.05rem;
+            color: #1f4b47;
+            border: 1px solid #c2dbd5;
+        }
+
+        .link-sentence a {
+            color: #0b6b61;
+            font-weight: 600;
+            text-decoration: none;
+            border-bottom: 2px solid #78beb3;
+            padding-bottom: 1px;
+            transition: border-color 0.15s;
+        }
+
+        .link-sentence a:hover {
+            border-bottom-color: #1f8c7e;
+            color: #04433d;
+        }
+
+        .footer-note {
+            margin-top: 2.5rem;
+            font-size: 0.85rem;
+            color: #617f88;
+            text-align: center;
+            border-top: 1px solid #d4e5e1;
+            padding-top: 1.5rem;
+        }
+
+        @media (max-width: 580px) {
+            .page {
+                padding: 1.5rem 1.2rem;
+            }
+            h1 {
+                font-size: 1.6rem;
+                padding-left: 0.8rem;
+            }
+            .grid-cards {
+                grid-template-columns: 1fr;
+                gap: 0.9rem;
+            }
+            .card {
+                padding: 1.2rem 1rem;
+            }
+            .insight-box {
+                padding: 1rem 1.2rem;
+            }
+            .link-sentence {
+                padding: 1rem 1.2rem;
+                font-size: 0.98rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <h1>爱游戏 · 稳定入口说明</h1>
+        <div class="subhead">一份关于平台定位、页面使用与信任导向的简明笔记</div>
+
+        <div class="intro-text">
+            <p>无论产品形态如何迭代，一个清晰且可靠的访问起点始终重要。<strong>爱游戏</strong> 作为整合了棋牌、休闲与轻度竞技内容的聚合页面，长期维持着固定的入口结构，这为习惯通过浏览器访问的用户提供了稳定的记忆锚点。本文从页面构成与使用逻辑出发，梳理其核心模块。</p>
+            <p>所谓「入口的稳定性」，体现在域名结构与页面框架的双重固定上。当你需要回到 <strong>爱游戏</strong> 的完整功能界面时，直接输入或保存书签即可抵达，无需经过跳转层或临时路径。这降低了使用摩擦，也减少了误入镜像站的可能。</p>
+        </div>
+
+        <div class="grid-cards">
+            <div class="card">
+                <h3><span class="dot-ornament"></span> 页面结构</h3>
+                <p>采用功能分区布局，左侧导航集成主要入口，中央为动态内容区，右侧保留信息面板。模块间通过视觉色块区分，降低认知负担。</p>
+            </div>
+            <div class="card">
+                <h3><span class="dot-ornament"></span> 场景适配</h3>
+                <p>无论是快速查询赛事、浏览排行，还是直接进入某一游戏房间，页面均提供平层切换逻辑，减少弹窗干扰，保持操作流线。</p>
+            </div>
+            <div class="card">
+                <h3><span class="dot-ornament"></span> 信息呈现</h3>
+                <p>数据看板与公告栏采用时间倒序与高亮标签，方便用户筛选关注内容。同时保持列表密度适中，避免信息过载。</p>
+            </div>
+            <div class="card">
+                <h3><span class="dot-ornament"></span> 移动兼容</h3>
+                <p>页面基于栅格系统做了响应式适配，在手机端自动折叠侧栏、放大触控区域，核心操作依然保留在首屏可视区内。</p>
+            </div>
+        </div>
+
+        <div class="insight-box">
+            <strong>提示：</strong> 若你长期使用同一设备访问，建议将 <a href="https://portalofficial-aiyouxi.com.cn" style="color: #0b6b61; text-decoration: underline; text-underline-offset: 3px;">爱游戏</a> 的首页添加至浏览器书签栏。这样既可以绕过搜索引擎的临时结果，也能确保每次打开的都是正式发布的页面版本。
+        </div>
+
+        <div class="faq-mini">
+            <details>
+                <summary>FAQ 摘要 · 入口与识别</summary>
+                <p><strong>Q：</strong> 如何确认当前访问的是正式页面？<br>
+                <strong>A：</strong> 核对浏览器地址栏域名是否以 <code>portalofficial-aiyouxi.com.cn</code> 开头，且无额外路径参数。同时页面顶部应有固定的平台标识。</p>
+                <p><strong>Q：</strong> 页面某些功能按钮无响应怎么办？<br>
+                <strong>A：</strong> 可尝试刷新或清除浏览器缓存。若持续异常，建议使用 Chrome / Edge 最新版本，并关闭干扰性插件。</p>
+            </details>
+        </div>
+
+        <div class="link-sentence">
+            ▸ 日常使用或功能查询，可直接通过 <a href="https://portalofficial-aiyouxi.com.cn">爱游戏</a> 主页进入，页面内容均保持同步更新。
+        </div>
+
+        <div class="footer-note">
+            页面版本说明 · 稳定入口指向 · 信息更新于本月
+        </div>
+    </div>
+</body>
+</html>
