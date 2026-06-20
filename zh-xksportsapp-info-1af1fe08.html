@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>星空体育 · 稳定入口与页面说明</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background-color: #f9fafb;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Hero 深色头图 */
+        .hero {
+            background: linear-gradient(145deg, #0b1122 0%, #1a2639 100%);
+            color: #edf2f7;
+            padding: 80px 0 70px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: -30%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(99, 130, 255, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            margin-bottom: 18px;
+            position: relative;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            max-width: 720px;
+            margin: 0 auto 30px;
+            color: #b0c4de;
+            position: relative;
+        }
+
+        .hero .sub-meta {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(4px);
+            padding: 8px 22px;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            color: #cbd5e1;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            position: relative;
+        }
+
+        /* 浅色正文区 */
+        .section {
+            background: #ffffff;
+            padding: 60px 0;
+            border-bottom: 1px solid #e9edf2;
+        }
+
+        .section:last-of-type {
+            border-bottom: none;
+        }
+
+        .section-title {
+            font-size: 1.7rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+            color: #0f172a;
+            letter-spacing: -0.01em;
+        }
+
+        .section-sub {
+            color: #475569;
+            margin-bottom: 32px;
+            max-width: 780px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 28px;
+            margin-top: 10px;
+        }
+
+        .card {
+            background: #f8fafc;
+            padding: 28px 24px;
+            border-radius: 16px;
+            transition: box-shadow 0.25s, transform 0.2s;
+            border: 1px solid #e2e8f0;
+        }
+
+        .card:hover {
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.05);
+            transform: translateY(-3px);
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #0b1122;
+        }
+
+        .card p {
+            font-size: 0.96rem;
+            color: #334155;
+        }
+
+        .emph-link {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s, color 0.15s;
+        }
+
+        .emph-link:hover {
+            border-bottom-color: #2563eb;
+            color: #1d4ed8;
+        }
+
+        .faq-item {
+            padding: 20px 0;
+            border-bottom: 1px solid #e9edf2;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            font-size: 1.05rem;
+            margin-bottom: 6px;
+            color: #0f172a;
+        }
+
+        .faq-answer {
+            color: #475569;
+            font-size: 0.95rem;
+        }
+
+        .bottom-links {
+            background: #ffffff;
+            padding: 32px 0 50px;
+            text-align: center;
+        }
+
+        .bottom-links .inner {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px 40px;
+            font-size: 0.95rem;
+            color: #64748b;
+        }
+
+        .bottom-links a {
+            color: #2563eb;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        .bottom-links a:hover {
+            opacity: 0.75;
+            text-decoration: underline;
+        }
+
+        .bottom-note {
+            margin-top: 28px;
+            color: #94a3b8;
+            font-size: 0.85rem;
+        }
+
+        /* responsive */
+        @media (max-width: 640px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero p {
+                font-size: 1rem;
+                padding: 0 10px;
+            }
+            .section {
+                padding: 40px 0;
+            }
+            .section-title {
+                font-size: 1.4rem;
+            }
+            .card {
+                padding: 22px 18px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .hero {
+                padding: 100px 0 80px;
+            }
+        }
+
+        a {
+            transition: color 0.15s;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero 深色头图 -->
+    <section class="hero">
+        <div class="container">
+            <h1>星空体育 · 稳定入口</h1>
+            <p>
+                从页面访问到内容浏览，为关注体育与休闲的用户提供一条清晰、平顺的路径。
+                这里不堆砌信息，只呈现必要的入口说明。
+            </p>
+            <span class="sub-meta">页面说明 · 持续可用</span>
+        </div>
+    </section>
+
+    <!-- 优势区：稳定与说明 -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">为什么关注稳定入口</h2>
+            <p class="section-sub">
+                对于经常浏览体育资讯与娱乐内容的用户来说，一个可靠且长期不变的地址是基本需求。
+                <a href="https://zh-xksportsapp.com" class="emph-link">星空体育</a> 正是出于这种考虑，
+                保持页面结构清晰，减少不必要的跳转与干扰。
+            </p>
+            <div class="grid-3">
+                <div class="card">
+                    <h3>直接访问</h3>
+                    <p>页面地址保持统一，无需记忆多个次级域名。在浏览器中打开即可看到完整内容。</p>
+                </div>
+                <div class="card">
+                    <h3>内容平稳呈现</h3>
+                    <p>从头部信息到正文说明，每一部分都经过梳理，避免大段冗余文字或频繁弹窗。</p>
+                </div>
+                <div class="card">
+                    <h3>长期维护</h3>
+                    <p>页面基于通用 HTML 与 CSS 构建，可跟随反馈进行微调，保证基础体验一致。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 说明区：使用场景与建议 -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">页面说明与场景</h2>
+            <p class="section-sub">
+                无论你是刚刚接触，还是希望找一个更安静的页面来阅读体育相关介绍，以下两点可供参考。
+            </p>
+            <div style="display: flex; flex-wrap: wrap; gap: 30px;">
+                <div style="flex: 1; min-width: 240px;">
+                    <h3 style="font-size: 1.1rem; margin-bottom: 10px; color: #0f172a;">资讯浏览</h3>
+                    <p style="color: #475569; font-size: 0.96rem;">
+                        通过 <a href="https://zh-xksportsapp.com" class="emph-link">星空体育</a> 
+                        可以快速了解体育动态、赛事概况及休闲内容。页面采用浅色主区，阅读舒适度较高。
+                    </p>
+                </div>
+                <div style="flex: 1; min-width: 240px;">
+                    <h3 style="font-size: 1.1rem; margin-bottom: 10px; color: #0f172a;">入口稳定性</h3>
+                    <p style="color: #475569; font-size: 0.96rem;">
+                        建议将当前地址加入浏览器收藏夹或书签栏。稳定的入口能节省反复搜索的时间，也便于日常访问。
+                    </p>
+                </div>
+            </div>
+            <div style="margin-top: 30px; padding: 18px 22px; background: #f1f5f9; border-radius: 12px; border-left: 4px solid #2563eb;">
+                <p style="font-size: 0.95rem; color: #1e293b;">
+                    <strong>提示：</strong> 本页面仅为介绍与说明用途，所有内容围绕“稳定入口”和“页面说明”展开。
+                    如果你希望直接跳转到服务页面，请在浏览器地址栏输入完整域名。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ 摘要 -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">常见疑问摘要</h2>
+            <div class="faq-item">
+                <div class="faq-question">这个页面与星空体育是什么关系？</div>
+                <div class="faq-answer">
+                    这是一个介绍性页面，用于说明访问方式与内容方向。
+                    核心服务入口仍为 <a href="https://zh-xksportsapp.com" class="emph-link">星空体育</a>，本页提供基础指引。
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">页面内容会经常变化吗？</div>
+                <div class="faq-answer">
+                    页面结构保持相对稳定，但会根据需要调整措辞与说明段落，以便更贴合用户的使用习惯。
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">如何确保访问的稳定性？</div>
+                <div class="faq-answer">
+                    建议使用主流浏览器，并保持网络连接正常。页面本身不包含复杂脚本，加载依赖较少，因此可用性较高。
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 底部链接 -->
+    <div class="bottom-links">
+        <div class="container">
+            <div class="inner">
+                <a href="https://zh-xksportsapp.com">星空体育</a>
+                <span>页面说明</span>
+                <span>稳定入口</span>
+                <span>FAQ 摘要</span>
+            </div>
+            <div class="bottom-note">
+                温和引导 · 避免硬广 · 内容真实克制
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
